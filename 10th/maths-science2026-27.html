@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Class 10 – Complete Day-Wise Study Plan 2026</title>
+<style>
+:root {
+  --blue: #2563EB;
+  --navy: #1E3A5F;
+  --green: #16A34A;
+  --amber: #D97706;
+  --red: #E11D48;
+  --purple: #7C3AED;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #1E293B;
+  --muted: #64748B;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; font-size: 14px; }
+a { color: var(--blue); }
+
+/* HEADER */
+.site-header { background: linear-gradient(135deg, #1E3A5F 0%, #2563EB 100%); color: white; padding: 36px 24px 28px; text-align: center; }
+.site-header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.5px; }
+.site-header p { opacity: 0.85; font-size: 0.95rem; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+.badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 4px 14px; font-size: 0.78rem; font-weight: 600; }
+
+/* TABS */
+.tab-nav { background: white; border-bottom: 2px solid var(--border); display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); }
+.tab-btn { border: none; background: none; padding: 14px 22px; font-size: 0.9rem; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.2s; }
+.tab-btn:hover { color: var(--blue); background: #F1F5FF; }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); background: #EFF6FF; }
+
+/* CONTENT */
+.tab-pane { display: none; padding: 24px; max-width: 1400px; margin: 0 auto; }
+.tab-pane.active { display: block; }
+
+/* SECTION HEADER */
+.section-header { margin-bottom: 20px; }
+.section-header h2 { font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+.section-header p { color: var(--muted); margin-top: 4px; }
+
+/* LEGEND */
+.legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; }
+.legend-dot { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
+
+/* SUBJECT TAG */
+.subj-tag { display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 0.72rem; font-weight: 700; }
+
+/* TABLE */
+.plan-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; box-shadow: var(--shadow-md); border-radius: var(--radius); overflow: hidden; }
+.plan-table thead th { padding: 10px 10px; text-align: left; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.plan-table tbody td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.plan-table tbody tr:hover { background: #F8FAFC !important; }
+.plan-table tbody tr:last-child td { border-bottom: none; }
+
+.type-pill { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; }
+
+/* WEEK CARD */
+.week-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; box-shadow: var(--shadow); }
+.week-header { background: #1E3A5F; color: white; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+.week-header h3 { font-size: 0.95rem; font-weight: 700; }
+.week-header span { font-size: 0.78rem; opacity: 0.75; }
+.week-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0; }
+.day-card { padding: 12px 14px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.day-card:last-child { border-right: none; }
+.day-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.day-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; }
+.day-subject { font-size: 0.82rem; font-weight: 700; margin-bottom: 3px; }
+.day-chapter { font-size: 0.75rem; color: var(--muted); margin-bottom: 3px; }
+.day-topic { font-size: 0.8rem; font-weight: 500; line-height: 1.3; }
+
+/* MONTH SECTION */
+.month-section { margin-bottom: 32px; }
+.month-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 0; }
+.month-title { font-size: 1.15rem; font-weight: 800; }
+.month-subtitle { font-size: 0.82rem; opacity: 0.8; margin-top: 2px; }
+.month-stats { display: flex; gap: 16px; font-size: 0.8rem; }
+.month-stat { text-align: center; }
+.month-stat-num { font-size: 1.2rem; font-weight: 800; display: block; }
+
+/* QUARTER SECTION */
+.quarter-section { margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+.quarter-header { padding: 20px 24px; color: white; }
+.quarter-header h2 { font-size: 1.4rem; font-weight: 800; }
+.quarter-header .meta { opacity: 0.85; margin-top: 6px; font-size: 0.88rem; }
+.quarter-body { background: white; }
+.quarter-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px 24px; border-bottom: 1px solid var(--border); }
+.info-card { background: #F8FAFC; border-radius: 8px; padding: 14px 16px; border: 1px solid var(--border); }
+.info-card h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 8px; }
+.info-card p { font-size: 0.88rem; line-height: 1.5; }
+.exam-box { margin: 0 24px 20px; padding: 16px 20px; border-radius: 8px; }
+.exam-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.exam-detail { display: flex; flex-wrap: wrap; gap: 16px; }
+.exam-detail span { font-size: 0.85rem; }
+.tips-box { margin: 0 24px 20px; }
+.tips-box h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; color: var(--muted); }
+.tips-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.tips-list li { font-size: 0.85rem; padding-left: 18px; position: relative; }
+.tips-list li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+.quarter-month-accordion { border-top: 1px solid var(--border); }
+.qmonth-header { padding: 12px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 0.9rem; }
+.qmonth-header:hover { background: #F8FAFC; }
+.qmonth-body { display: none; overflow-x: auto; }
+.qmonth-body.open { display: block; }
+.toggle-icon { font-size: 0.75rem; transition: transform 0.2s; }
+.toggle-icon.open { transform: rotate(180deg); }
+
+/* PROGRESS BAR */
+.progress-wrap { margin: 20px 24px; }
+.progress-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); margin-bottom: 6px; display: flex; justify-content: space-between; }
+.progress-bar { height: 8px; background: var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.progress-fill { height: 100%; border-radius: 10px; }
+
+/* STATS GRID */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; box-shadow: var(--shadow); }
+.stat-num { font-size: 1.8rem; font-weight: 800; display: block; }
+.stat-label { font-size: 0.75rem; color: var(--muted); font-weight: 600; margin-top: 4px; display: block; }
+
+/* SEARCH */
+.search-bar { width: 100%; max-width: 400px; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 0.9rem; outline: none; transition: border 0.2s; }
+.search-bar:focus { border-color: var(--blue); }
+.filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; align-items: center; }
+.filter-btn { padding: 6px 14px; border: 2px solid var(--border); border-radius: 20px; background: white; cursor: pointer; font-size: 0.78rem; font-weight: 600; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { border-color: var(--blue); background: #EFF6FF; color: var(--blue); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tab-btn { padding: 12px 14px; font-size: 0.82rem; }
+  .tab-pane { padding: 14px; }
+  .quarter-info-grid { grid-template-columns: 1fr; }
+  .plan-table { font-size: 0.75rem; }
+  .site-header h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>📚 CBSE Class 10 Study Plan 2026</h1>
+  <p>Mathematics &amp; Science | Apr 15 – Dec 31, 2026 | Target: 90%+ in Board Examinations</p>
+  <div class="badges">
+    <span class="badge">🗓 180 School Days</span>
+    <span class="badge">📐 Math: Mon &amp; Wed</span>
+    <span class="badge">⚡ Physics: Tue</span>
+    <span class="badge">🧪 Chemistry: Thu</span>
+    <span class="badge">🌿 Biology: Fri</span>
+    <span class="badge">🚫 Weekends &amp; Holidays Excluded</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('day')">📅 Day-Wise</button>
+  <button class="tab-btn" onclick="switchTab('week')">📆 Week-Wise</button>
+  <button class="tab-btn" onclick="switchTab('month')">🗓 Month-Wise</button>
+  <button class="tab-btn" onclick="switchTab('quarter')">🎯 Quarter-Wise</button>
+</nav>
+
+<!-- ============================================================ -->
+<!-- DAY-WISE TAB -->
+<!-- ============================================================ -->
+<div id="tab-day" class="tab-pane active">
+  <div class="section-header">
+    <h2>Day-Wise Study Schedule</h2>
+    <p>All 180 school days — Weekends and public holidays excluded</p>
+  </div>
+  <div class="filter-row">
+    <input class="search-bar" type="text" id="daySearch" placeholder="🔍 Search topic, chapter..." oninput="filterDayTable()">
+    <button class="filter-btn active" onclick="setSubjFilter('All', this)">All</button>
+    <button class="filter-btn" onclick="setSubjFilter('Math', this)">📐 Math</button>
+    <button class="filter-btn" onclick="setSubjFilter('Physics', this)">⚡ Physics</button>
+    <button class="filter-btn" onclick="setSubjFilter('Chemistry', this)">🧪 Chemistry</button>
+    <button class="filter-btn" onclick="setSubjFilter('Biology', this)">🌿 Biology</button>
+  </div>
+  <div style="overflow-x:auto">
+  <table class="plan-table" id="dayTable">
+    <thead style="background:#1E3A5F; color:white">
+      <tr>
+        <th style="width:50px">#</th>
+        <th style="width:100px">Date</th>
+        <th style="width:70px">Day</th>
+        <th style="width:90px">Quarter</th>
+        <th style="width:80px">Subject</th>
+        <th style="width:160px">Chapter</th>
+        <th>Topic for the Day</th>
+        <th style="width:100px">NCERT Ref</th>
+        <th style="width:110px">Type</th>
+      </tr>
+    </thead>
+    <tbody id="dayBody"></tbody>
+  </table>
+  </div>
+  <p style="margin-top:12px;color:var(--muted);font-size:0.8rem" id="dayCount"></p>
+</div>
+
+<!-- ============================================================ -->
+<!-- WEEK-WISE TAB -->
+<!-- ============================================================ -->
+<div id="tab-week" class="tab-pane">
+  <div class="section-header">
+    <h2>Week-Wise Study Schedule</h2>
+    <p>Each week shows all 5 subjects. Ideal for weekly planning and review.</p>
+  </div>
+  <div id="weekContainer"></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MONTH-WISE TAB -->
+<!-- ============================================================ -->
+<div id="tab-month" class="tab-pane">
+  <div class="section-header">
+    <h2>Month-Wise Study Schedule</h2>
+    <p>View study load by month. Summary stats + full day-by-day table.</p>
+  </div>
+  <div id="monthContainer"></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUARTER-WISE TAB -->
+<!-- ============================================================ -->
+<div id="tab-quarter" class="tab-pane">
+  <div class="section-header">
+    <h2>Quarter-Wise Plan with Examinations</h2>
+    <p>Each quarter ends with an exam. Click on months to expand the day schedule.</p>
+  </div>
+  <div id="quarterContainer"></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCRIPT -->
+<!-- ============================================================ -->
+<script>
+const SCHEDULE = [{"day":1,"date":"2026-04-15","dayName":"Wednesday","month":"April","monthNum":3,"weekNum":1,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Real Numbers","topic":"Euclid's Division Lemma & Algorithm","ncert":"Ex 1.1","type":"Concept"},{"day":2,"date":"2026-04-16","dayName":"Thursday","month":"April","monthNum":3,"weekNum":1,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Chemical Reactions ⭐","topic":"Chemical Equations – Balancing","ncert":"Ex 1.1","type":"Concept"},{"day":3,"date":"2026-04-17","dayName":"Friday","month":"April","monthNum":3,"weekNum":1,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Nutrition in Plants – Photosynthesis","ncert":"Ex 6.1","type":"Diagram+Concept"},{"day":4,"date":"2026-04-20","dayName":"Monday","month":"April","monthNum":3,"weekNum":1,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Real Numbers","topic":"Fundamental Theorem of Arithmetic","ncert":"Ex 1.2","type":"Concept"},{"day":5,"date":"2026-04-21","dayName":"Tuesday","month":"April","monthNum":3,"weekNum":1,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Laws of Reflection – Plane Mirror","ncert":"Ex 10.1","type":"Concept"},{"day":6,"date":"2026-04-22","dayName":"Wednesday","month":"April","monthNum":3,"weekNum":2,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Real Numbers","topic":"Revisiting Irrational Numbers – Proofs","ncert":"Ex 1.3","type":"Proof"},{"day":7,"date":"2026-04-23","dayName":"Thursday","month":"April","monthNum":3,"weekNum":2,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Chemical Reactions ⭐","topic":"Combination & Decomposition Reactions","ncert":"Ex 1.2","type":"Concept"},{"day":8,"date":"2026-04-24","dayName":"Friday","month":"April","monthNum":3,"weekNum":2,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Nutrition in Animals – Human Digestive System","ncert":"Ex 6.1","type":"Diagram"},{"day":9,"date":"2026-04-27","dayName":"Monday","month":"April","monthNum":3,"weekNum":2,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Real Numbers","topic":"Decimal Expansions of Rational Numbers","ncert":"Ex 1.4","type":"Application"},{"day":10,"date":"2026-04-28","dayName":"Tuesday","month":"April","monthNum":3,"weekNum":2,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Spherical Mirrors – Types, Terms","ncert":"Ex 10.1","type":"Concept"},{"day":11,"date":"2026-04-29","dayName":"Wednesday","month":"April","monthNum":3,"weekNum":3,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Polynomials","topic":"Geometrical Meaning of Zeros","ncert":"Ex 2.1","type":"Concept"},{"day":12,"date":"2026-04-30","dayName":"Thursday","month":"April","monthNum":3,"weekNum":3,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Chemical Reactions ⭐","topic":"Displacement & Double Displacement","ncert":"Ex 1.3","type":"Concept"},{"day":13,"date":"2026-05-04","dayName":"Monday","month":"May","monthNum":4,"weekNum":3,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Polynomials","topic":"Relationship Between Zeros & Coefficients","ncert":"Ex 2.2","type":"Concept"},{"day":14,"date":"2026-05-05","dayName":"Tuesday","month":"May","monthNum":4,"weekNum":3,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Mirror Formula & Sign Convention","ncert":"Ex 10.2","type":"Formula"},{"day":15,"date":"2026-05-06","dayName":"Wednesday","month":"May","monthNum":4,"weekNum":4,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Polynomials","topic":"Division Algorithm for Polynomials","ncert":"Ex 2.3–2.4","type":"Application"},{"day":16,"date":"2026-05-07","dayName":"Thursday","month":"May","monthNum":4,"weekNum":4,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Chemical Reactions ⭐","topic":"Oxidation & Reduction Reactions","ncert":"Ex 1.3","type":"Concept"},{"day":17,"date":"2026-05-08","dayName":"Friday","month":"May","monthNum":4,"weekNum":4,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Respiration – Aerobic & Anaerobic","ncert":"Ex 6.2","type":"Concept"},{"day":18,"date":"2026-05-11","dayName":"Monday","month":"May","monthNum":4,"weekNum":4,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Linear Equations","topic":"Pair of Equations – Graphical Method","ncert":"Ex 3.1–3.2","type":"Concept"},{"day":19,"date":"2026-05-12","dayName":"Tuesday","month":"May","monthNum":4,"weekNum":4,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Magnification – Concave & Convex Mirror","ncert":"Ex 10.2","type":"Application"},{"day":20,"date":"2026-05-13","dayName":"Wednesday","month":"May","monthNum":4,"weekNum":5,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Linear Equations","topic":"Substitution Method","ncert":"Ex 3.3","type":"Method"},{"day":21,"date":"2026-05-14","dayName":"Thursday","month":"May","monthNum":4,"weekNum":5,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Chemical Reactions ⭐","topic":"Corrosion & Rancidity","ncert":"Ex 1.4","type":"Application"},{"day":22,"date":"2026-05-15","dayName":"Friday","month":"May","monthNum":4,"weekNum":5,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Human Respiratory System – Breathing","ncert":"Ex 6.2","type":"Diagram"},{"day":23,"date":"2026-05-18","dayName":"Monday","month":"May","monthNum":4,"weekNum":5,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Linear Equations","topic":"Elimination Method","ncert":"Ex 3.4","type":"Method"},{"day":24,"date":"2026-05-19","dayName":"Tuesday","month":"May","monthNum":4,"weekNum":5,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Uses of Mirrors – Ray Diagrams","ncert":"Ex 10.2","type":"Diagram"},{"day":25,"date":"2026-05-20","dayName":"Wednesday","month":"May","monthNum":4,"weekNum":6,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Linear Equations","topic":"Cross-Multiplication Method","ncert":"Ex 3.5","type":"Method"},{"day":26,"date":"2026-05-21","dayName":"Thursday","month":"May","monthNum":4,"weekNum":6,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Properties of Acids – Reactions","ncert":"Ex 2.1","type":"Concept"},{"day":27,"date":"2026-05-22","dayName":"Friday","month":"May","monthNum":4,"weekNum":6,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Transportation in Plants – Xylem & Phloem","ncert":"Ex 6.3","type":"Concept"},{"day":28,"date":"2026-05-25","dayName":"Monday","month":"May","monthNum":4,"weekNum":6,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Linear Equations","topic":"Word Problems – Linear Equations","ncert":"Ex 3.6–3.7","type":"Application"},{"day":29,"date":"2026-05-26","dayName":"Tuesday","month":"May","monthNum":4,"weekNum":6,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Refraction – Laws, Refractive Index","ncert":"Ex 10.3","type":"Concept"},{"day":30,"date":"2026-05-27","dayName":"Wednesday","month":"May","monthNum":4,"weekNum":7,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Quadratic Equations","topic":"Standard Form & Solution by Factorisation","ncert":"Ex 4.1–4.2","type":"Concept"},{"day":31,"date":"2026-05-28","dayName":"Thursday","month":"May","monthNum":4,"weekNum":7,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Properties of Bases – Reactions","ncert":"Ex 2.1","type":"Concept"},{"day":32,"date":"2026-05-29","dayName":"Friday","month":"May","monthNum":4,"weekNum":7,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Circulatory System – Heart Structure","ncert":"Ex 6.3","type":"Diagram"},{"day":33,"date":"2026-06-01","dayName":"Monday","month":"June","monthNum":5,"weekNum":7,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Quadratic Equations","topic":"Completing the Square","ncert":"Ex 4.3","type":"Method"},{"day":34,"date":"2026-06-03","dayName":"Wednesday","month":"June","monthNum":5,"weekNum":8,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Quadratic Equations","topic":"Quadratic Formula","ncert":"Ex 4.3","type":"Method"},{"day":35,"date":"2026-06-04","dayName":"Thursday","month":"June","monthNum":5,"weekNum":8,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Strength of Acids & Bases – pH Scale","ncert":"Ex 2.2","type":"Concept"},{"day":36,"date":"2026-06-05","dayName":"Friday","month":"June","monthNum":5,"weekNum":8,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Double Circulation – Blood flow","ncert":"Ex 6.3","type":"Concept"},{"day":37,"date":"2026-06-08","dayName":"Monday","month":"June","monthNum":5,"weekNum":8,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Quadratic Equations","topic":"Nature of Roots – Discriminant","ncert":"Ex 4.4","type":"Concept"},{"day":38,"date":"2026-06-09","dayName":"Tuesday","month":"June","monthNum":5,"weekNum":8,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Refraction through Glass Slab","ncert":"Ex 10.3","type":"Application"},{"day":39,"date":"2026-06-10","dayName":"Wednesday","month":"June","monthNum":5,"weekNum":9,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Quadratic Equations","topic":"Word Problems – Quadratic Equations","ncert":"Ex 4.2–4.3","type":"Application"},{"day":40,"date":"2026-06-11","dayName":"Thursday","month":"June","monthNum":5,"weekNum":9,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Importance of pH in Daily Life","ncert":"Ex 2.2","type":"Application"},{"day":41,"date":"2026-06-12","dayName":"Friday","month":"June","monthNum":5,"weekNum":9,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Life Processes ⭐","topic":"Excretion in Plants & Humans","ncert":"Ex 6.4","type":"Concept+Diagram"},{"day":42,"date":"2026-06-15","dayName":"Monday","month":"June","monthNum":5,"weekNum":9,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Arithmetic Progressions","topic":"Introduction & nth Term","ncert":"Ex 5.1–5.2","type":"Concept"},{"day":43,"date":"2026-06-16","dayName":"Tuesday","month":"June","monthNum":5,"weekNum":9,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Spherical Lenses – Types, Terms","ncert":"Ex 10.4","type":"Concept"},{"day":44,"date":"2026-06-17","dayName":"Wednesday","month":"June","monthNum":5,"weekNum":10,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Arithmetic Progressions","topic":"Sum of First n Terms","ncert":"Ex 5.3","type":"Formula"},{"day":45,"date":"2026-06-18","dayName":"Thursday","month":"June","monthNum":5,"weekNum":10,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Salts – Types, Preparation","ncert":"Ex 2.3","type":"Concept"},{"day":46,"date":"2026-06-19","dayName":"Friday","month":"June","monthNum":5,"weekNum":10,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Control & Coordination","topic":"Nervous System – Neurons, Nerves","ncert":"Ex 7.1","type":"Diagram"},{"day":47,"date":"2026-06-22","dayName":"Monday","month":"June","monthNum":5,"weekNum":10,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Arithmetic Progressions","topic":"AP Word Problems","ncert":"Ex 5.4","type":"Application"},{"day":48,"date":"2026-06-23","dayName":"Tuesday","month":"June","monthNum":5,"weekNum":10,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Light ⭐","topic":"Lens Formula, Magnification, Power","ncert":"Ex 10.4","type":"Formula"},{"day":49,"date":"2026-06-24","dayName":"Wednesday","month":"June","monthNum":5,"weekNum":11,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Basic Proportionality Theorem (BPT)","ncert":"Ex 6.1–6.2","type":"Theorem+Proof"},{"day":50,"date":"2026-06-25","dayName":"Thursday","month":"June","monthNum":5,"weekNum":11,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Acids, Bases & Salts ⭐","topic":"Water of Crystallization, Common Salt","ncert":"Ex 2.3","type":"Application"},{"day":51,"date":"2026-06-26","dayName":"Friday","month":"June","monthNum":5,"weekNum":11,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Control & Coordination","topic":"Human Brain – Parts & Functions","ncert":"Ex 7.1","type":"Diagram"},{"day":52,"date":"2026-06-29","dayName":"Monday","month":"June","monthNum":5,"weekNum":11,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Converse of BPT – Applications","ncert":"Ex 6.2","type":"Application"},{"day":53,"date":"2026-06-30","dayName":"Tuesday","month":"June","monthNum":5,"weekNum":11,"quarter":"Q1","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Human Eye","topic":"Structure & Working of the Human Eye","ncert":"Ex 11.1","type":"Diagram"},{"day":54,"date":"2026-07-01","dayName":"Wednesday","month":"July","monthNum":6,"weekNum":12,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Criteria for Similarity – AA, SSS, SAS","ncert":"Ex 6.3","type":"Theorem"},{"day":55,"date":"2026-07-02","dayName":"Thursday","month":"July","monthNum":6,"weekNum":12,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Metals & Non-Metals","topic":"Physical Properties of Metals & Non-Metals","ncert":"Ex 3.1","type":"Concept"},{"day":56,"date":"2026-07-03","dayName":"Friday","month":"July","monthNum":6,"weekNum":12,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Control & Coordination","topic":"Reflex Action & Reflex Arc","ncert":"Ex 7.1","type":"Concept"},{"day":57,"date":"2026-07-06","dayName":"Monday","month":"July","monthNum":6,"weekNum":12,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Areas of Similar Triangles","ncert":"Ex 6.4","type":"Theorem+Proof"},{"day":58,"date":"2026-07-07","dayName":"Tuesday","month":"July","monthNum":6,"weekNum":12,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Human Eye","topic":"Defects – Myopia, Hypermetropia, Presbyopia","ncert":"Ex 11.1","type":"Concept"},{"day":59,"date":"2026-07-08","dayName":"Wednesday","month":"July","monthNum":6,"weekNum":13,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Pythagoras Theorem – Proof & Applications","ncert":"Ex 6.5","type":"Theorem+Proof"},{"day":60,"date":"2026-07-09","dayName":"Thursday","month":"July","monthNum":6,"weekNum":13,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Metals & Non-Metals","topic":"Chemical Properties – Reactions with O₂, H₂O","ncert":"Ex 3.1","type":"Concept"},{"day":61,"date":"2026-07-10","dayName":"Friday","month":"July","monthNum":6,"weekNum":13,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Control & Coordination","topic":"Chemical Coordination – Endocrine Glands","ncert":"Ex 7.2","type":"Concept"},{"day":62,"date":"2026-07-13","dayName":"Monday","month":"July","monthNum":6,"weekNum":13,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Triangles ⭐","topic":"Converse of Pythagoras – Practice","ncert":"Ex 6.5","type":"Application"},{"day":63,"date":"2026-07-14","dayName":"Tuesday","month":"July","monthNum":6,"weekNum":13,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Human Eye","topic":"Refraction through Prism – Dispersion","ncert":"Ex 11.2","type":"Concept"},{"day":64,"date":"2026-07-15","dayName":"Wednesday","month":"July","monthNum":6,"weekNum":14,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Coordinate Geometry","topic":"Distance Formula","ncert":"Ex 7.1","type":"Formula"},{"day":65,"date":"2026-07-16","dayName":"Thursday","month":"July","monthNum":6,"weekNum":14,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Metals & Non-Metals","topic":"Reactivity Series – Applications","ncert":"Ex 3.2","type":"Concept"},{"day":66,"date":"2026-07-17","dayName":"Friday","month":"July","monthNum":6,"weekNum":14,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Control & Coordination","topic":"Hormones – Types, Functions","ncert":"Ex 7.2","type":"Application"},{"day":67,"date":"2026-07-20","dayName":"Monday","month":"July","monthNum":6,"weekNum":14,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Coordinate Geometry","topic":"Section Formula & Mid-Point","ncert":"Ex 7.2","type":"Formula"},{"day":68,"date":"2026-07-21","dayName":"Tuesday","month":"July","monthNum":6,"weekNum":14,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Human Eye","topic":"Atmospheric Refraction – Twinkling, Sunrise","ncert":"Ex 11.2","type":"Application"},{"day":69,"date":"2026-07-22","dayName":"Wednesday","month":"July","monthNum":6,"weekNum":15,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Coordinate Geometry","topic":"Area of Triangle using Coordinates","ncert":"Ex 7.3–7.4","type":"Application"},{"day":70,"date":"2026-07-23","dayName":"Thursday","month":"July","monthNum":6,"weekNum":15,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Metals & Non-Metals","topic":"Extraction of Metals – Highly/Low Reactive","ncert":"Ex 3.3","type":"Concept"},{"day":71,"date":"2026-07-24","dayName":"Friday","month":"July","monthNum":6,"weekNum":15,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Reproduction ⭐","topic":"Asexual Reproduction – Types","ncert":"Ex 8.1","type":"Concept"},{"day":72,"date":"2026-07-28","dayName":"Tuesday","month":"July","monthNum":6,"weekNum":15,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Electricity ⭐","topic":"Electric Charge, Current, Potential Difference","ncert":"Ex 12.1","type":"Concept"},{"day":73,"date":"2026-07-29","dayName":"Wednesday","month":"July","monthNum":6,"weekNum":16,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Trigonometry ⭐","topic":"Trigonometric Ratios – Introduction","ncert":"Ex 8.1","type":"Concept"},{"day":74,"date":"2026-07-30","dayName":"Thursday","month":"July","monthNum":6,"weekNum":16,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Metals & Non-Metals","topic":"Corrosion – Types, Prevention","ncert":"Ex 3.4","type":"Application"},{"day":75,"date":"2026-07-31","dayName":"Friday","month":"July","monthNum":6,"weekNum":16,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Reproduction ⭐","topic":"Sexual Reproduction in Flowering Plants","ncert":"Ex 8.2","type":"Diagram"},{"day":76,"date":"2026-08-03","dayName":"Monday","month":"August","monthNum":7,"weekNum":16,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Trigonometry ⭐","topic":"Values for 0°, 30°, 45°, 60°, 90°","ncert":"Ex 8.2","type":"Memorize"},{"day":77,"date":"2026-08-04","dayName":"Tuesday","month":"August","monthNum":7,"weekNum":16,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Electricity ⭐","topic":"Ohm's Law – Statement, V-I graph","ncert":"Ex 12.1","type":"Law"},{"day":78,"date":"2026-08-05","dayName":"Wednesday","month":"August","monthNum":7,"weekNum":17,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Trigonometry ⭐","topic":"Reciprocal Ratios – Cosec, Sec, Cot","ncert":"Ex 8.3","type":"Concept"},{"day":79,"date":"2026-08-06","dayName":"Thursday","month":"August","monthNum":7,"weekNum":17,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Covalent Bonding – Properties of Carbon","ncert":"Ex 4.1","type":"Concept"},{"day":80,"date":"2026-08-07","dayName":"Friday","month":"August","monthNum":7,"weekNum":17,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Reproduction ⭐","topic":"Human Reproductive System – Male","ncert":"Ex 8.3","type":"Diagram"},{"day":81,"date":"2026-08-10","dayName":"Monday","month":"August","monthNum":7,"weekNum":17,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Trigonometry ⭐","topic":"Trigonometric Identities – Proof Practice","ncert":"Ex 8.4","type":"Proof"},{"day":82,"date":"2026-08-11","dayName":"Tuesday","month":"August","monthNum":7,"weekNum":17,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Electricity ⭐","topic":"Resistance – Factors, Resistivity","ncert":"Ex 12.2","type":"Concept"},{"day":83,"date":"2026-08-12","dayName":"Wednesday","month":"August","monthNum":7,"weekNum":18,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Trigonometry ⭐","topic":"Complementary Angles","ncert":"Ex 8.3","type":"Application"},{"day":84,"date":"2026-08-13","dayName":"Thursday","month":"August","monthNum":7,"weekNum":18,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Allotropes of Carbon","ncert":"Ex 4.1","type":"Concept"},{"day":85,"date":"2026-08-14","dayName":"Friday","month":"August","monthNum":7,"weekNum":18,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Reproduction ⭐","topic":"Human Reproductive System – Female","ncert":"Ex 8.3","type":"Diagram"},{"day":86,"date":"2026-08-17","dayName":"Monday","month":"August","monthNum":7,"weekNum":18,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Applications of Trigonometry","topic":"Angle of Elevation – Problems","ncert":"Ex 9.1","type":"Application"},{"day":87,"date":"2026-08-18","dayName":"Tuesday","month":"August","monthNum":7,"weekNum":18,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Electricity ⭐","topic":"Series Connection of Resistors","ncert":"Ex 12.3","type":"Formula"},{"day":88,"date":"2026-08-19","dayName":"Wednesday","month":"August","monthNum":7,"weekNum":19,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Applications of Trigonometry","topic":"Angle of Depression – Problems","ncert":"Ex 9.1","type":"Application"},{"day":89,"date":"2026-08-20","dayName":"Thursday","month":"August","monthNum":7,"weekNum":19,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Saturated & Unsaturated Compounds","ncert":"Ex 4.2","type":"Concept"},{"day":90,"date":"2026-08-21","dayName":"Friday","month":"August","monthNum":7,"weekNum":19,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Reproduction ⭐","topic":"Reproductive Health & Contraception","ncert":"Ex 8.4","type":"Concept"},{"day":91,"date":"2026-08-24","dayName":"Monday","month":"August","monthNum":7,"weekNum":19,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Applications of Trigonometry","topic":"Mixed Height & Distance Problems","ncert":"Ex 9.1","type":"Application"},{"day":92,"date":"2026-08-25","dayName":"Tuesday","month":"August","monthNum":7,"weekNum":19,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Physics","chapter":"Electricity ⭐","topic":"Parallel Connection of Resistors","ncert":"Ex 12.3","type":"Formula"},{"day":93,"date":"2026-08-26","dayName":"Wednesday","month":"August","monthNum":7,"weekNum":20,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Circles","topic":"Tangent to a Circle – Theorem","ncert":"Ex 10.1","type":"Theorem+Proof"},{"day":94,"date":"2026-08-27","dayName":"Thursday","month":"August","monthNum":7,"weekNum":20,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Functional Groups in Carbon Compounds","ncert":"Ex 4.2","type":"Concept"},{"day":95,"date":"2026-08-28","dayName":"Friday","month":"August","monthNum":7,"weekNum":20,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Biology","chapter":"Heredity & Evolution","topic":"Mendel's Laws – Monohybrid Cross","ncert":"Ex 9.1","type":"Concept"},{"day":96,"date":"2026-08-31","dayName":"Monday","month":"August","monthNum":7,"weekNum":20,"quarter":"Q2","phase":1,"phaseLabel":"Phase 1: First Learning","subject":"Math","chapter":"Circles","topic":"Tangents from External Point – Proofs","ncert":"Ex 10.2","type":"Theorem+Proof"},{"day":97,"date":"2026-09-01","dayName":"Tuesday","month":"September","monthNum":8,"weekNum":20,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Electricity ⭐","topic":"Heating Effect – Joule's Law","ncert":"Ex 12.4","type":"Application"},{"day":98,"date":"2026-09-02","dayName":"Wednesday","month":"September","monthNum":8,"weekNum":21,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Areas Related to Circles","topic":"Perimeter & Area of Sector & Segment","ncert":"Ex 12.1–12.2","type":"Formula"},{"day":99,"date":"2026-09-03","dayName":"Thursday","month":"September","monthNum":8,"weekNum":21,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"IUPAC Nomenclature","ncert":"Ex 4.3","type":"Application"},{"day":100,"date":"2026-09-04","dayName":"Friday","month":"September","monthNum":8,"weekNum":21,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Heredity & Evolution","topic":"Dihybrid Cross & Sex Determination","ncert":"Ex 9.1","type":"Concept"},{"day":101,"date":"2026-09-07","dayName":"Monday","month":"September","monthNum":8,"weekNum":21,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Areas Related to Circles","topic":"Combinations of Plane Figures","ncert":"Ex 12.3","type":"Application"},{"day":102,"date":"2026-09-08","dayName":"Tuesday","month":"September","monthNum":8,"weekNum":21,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Electricity ⭐","topic":"Electric Power – Numericals","ncert":"Ex 12.4","type":"Numericals"},{"day":103,"date":"2026-09-09","dayName":"Wednesday","month":"September","monthNum":8,"weekNum":22,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Surface Areas & Volumes ⭐","topic":"SA of Combination of Solids","ncert":"Ex 13.1","type":"Application"},{"day":104,"date":"2026-09-10","dayName":"Thursday","month":"September","monthNum":8,"weekNum":22,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Chemical Properties – Combustion, Oxidation","ncert":"Ex 4.3","type":"Concept"},{"day":105,"date":"2026-09-11","dayName":"Friday","month":"September","monthNum":8,"weekNum":22,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Heredity & Evolution","topic":"Acquired vs Inherited Traits","ncert":"Ex 9.2","type":"Concept"},{"day":106,"date":"2026-09-14","dayName":"Monday","month":"September","monthNum":8,"weekNum":22,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Surface Areas & Volumes ⭐","topic":"Volume of Combination of Solids","ncert":"Ex 13.2","type":"Application"},{"day":107,"date":"2026-09-15","dayName":"Tuesday","month":"September","monthNum":8,"weekNum":22,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Magnetic Field – Field Lines, Bar Magnet","ncert":"Ex 13.1","type":"Concept"},{"day":108,"date":"2026-09-16","dayName":"Wednesday","month":"September","monthNum":8,"weekNum":23,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Surface Areas & Volumes ⭐","topic":"Conversion of Solids","ncert":"Ex 13.3","type":"Application"},{"day":109,"date":"2026-09-17","dayName":"Thursday","month":"September","monthNum":8,"weekNum":23,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Ethanol & Ethanoic Acid – Properties","ncert":"Ex 4.4","type":"Application"},{"day":110,"date":"2026-09-18","dayName":"Friday","month":"September","monthNum":8,"weekNum":23,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Heredity & Evolution","topic":"Evolution – Speciation, Fossils","ncert":"Ex 9.3","type":"Concept"},{"day":111,"date":"2026-09-21","dayName":"Monday","month":"September","monthNum":8,"weekNum":23,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Surface Areas & Volumes ⭐","topic":"Frustum of a Cone","ncert":"Ex 13.4–13.5","type":"Formula+Application"},{"day":112,"date":"2026-09-22","dayName":"Tuesday","month":"September","monthNum":8,"weekNum":23,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Oersted Exp, Straight Wire, Solenoid","ncert":"Ex 13.1","type":"Concept"},{"day":113,"date":"2026-09-23","dayName":"Wednesday","month":"September","monthNum":8,"weekNum":24,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Statistics","topic":"Mean – Direct, Assumed, Step-Deviation Methods","ncert":"Ex 14.1","type":"Method"},{"day":114,"date":"2026-09-24","dayName":"Thursday","month":"September","monthNum":8,"weekNum":24,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Carbon Compounds ⭐","topic":"Soaps & Detergents – Micelle Formation","ncert":"Ex 4.4","type":"Application"},{"day":115,"date":"2026-09-25","dayName":"Friday","month":"September","monthNum":8,"weekNum":24,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Our Environment","topic":"Ecosystem – Components, Food Chains","ncert":"Ex 15.1","type":"Concept"},{"day":116,"date":"2026-09-28","dayName":"Monday","month":"September","monthNum":8,"weekNum":24,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Statistics","topic":"Median – Grouped Data","ncert":"Ex 14.2","type":"Method"},{"day":117,"date":"2026-09-29","dayName":"Tuesday","month":"September","monthNum":8,"weekNum":24,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Force on Current-Carrying Conductor","ncert":"Ex 13.2","type":"Concept"},{"day":118,"date":"2026-09-30","dayName":"Wednesday","month":"September","monthNum":8,"weekNum":25,"quarter":"Q2","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Statistics","topic":"Mode – Grouped Data","ncert":"Ex 14.3","type":"Method"},{"day":119,"date":"2026-10-01","dayName":"Thursday","month":"October","monthNum":9,"weekNum":25,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Periodic Table","topic":"Early Attempts – Dobereiner, Newlands","ncert":"Ex 5.1","type":"Concept"},{"day":120,"date":"2026-10-05","dayName":"Monday","month":"October","monthNum":9,"weekNum":25,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Statistics","topic":"Cumulative Frequency & Ogive","ncert":"Ex 14.4","type":"Graph"},{"day":121,"date":"2026-10-06","dayName":"Tuesday","month":"October","monthNum":9,"weekNum":25,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Fleming's Left/Right Hand Rules","ncert":"Ex 13.2","type":"Rule"},{"day":122,"date":"2026-10-07","dayName":"Wednesday","month":"October","monthNum":9,"weekNum":26,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Probability","topic":"Probability – Theoretical Approach","ncert":"Ex 15.1","type":"Concept"},{"day":123,"date":"2026-10-08","dayName":"Thursday","month":"October","monthNum":9,"weekNum":26,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Periodic Table","topic":"Mendeleev's Periodic Table","ncert":"Ex 5.1","type":"Concept"},{"day":124,"date":"2026-10-09","dayName":"Friday","month":"October","monthNum":9,"weekNum":26,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Our Environment","topic":"Ozone Layer, Waste Management","ncert":"Ex 15.2","type":"Application"},{"day":125,"date":"2026-10-12","dayName":"Monday","month":"October","monthNum":9,"weekNum":26,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"Probability","topic":"Probability Word Problems","ncert":"Ex 15.1–15.2","type":"Application"},{"day":126,"date":"2026-10-13","dayName":"Tuesday","month":"October","monthNum":9,"weekNum":26,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Electric Motor – Working, Diagram","ncert":"Ex 13.3","type":"Diagram"},{"day":127,"date":"2026-10-14","dayName":"Wednesday","month":"October","monthNum":9,"weekNum":27,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"REVISION","topic":"Real Numbers & Polynomials – Full Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":128,"date":"2026-10-15","dayName":"Thursday","month":"October","monthNum":9,"weekNum":27,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Periodic Table","topic":"Modern Periodic Law – Long Form Table","ncert":"Ex 5.2","type":"Concept"},{"day":129,"date":"2026-10-16","dayName":"Friday","month":"October","monthNum":9,"weekNum":27,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Natural Resources","topic":"Forests, Wildlife – Management","ncert":"Ex 16.1","type":"Concept"},{"day":130,"date":"2026-10-19","dayName":"Monday","month":"October","monthNum":9,"weekNum":27,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"REVISION","topic":"Linear & Quadratic Equations – Full Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":131,"date":"2026-10-21","dayName":"Wednesday","month":"October","monthNum":9,"weekNum":28,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"REVISION","topic":"AP & Triangles – Full Revision + Proofs","ncert":"PYQ + Exemplar","type":"Revision"},{"day":132,"date":"2026-10-22","dayName":"Thursday","month":"October","monthNum":9,"weekNum":28,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"Periodic Table","topic":"Trends – Valency, Atomic Size, Metallic Character","ncert":"Ex 5.3","type":"Concept"},{"day":133,"date":"2026-10-23","dayName":"Friday","month":"October","monthNum":9,"weekNum":28,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"Natural Resources","topic":"Water, Coal, Petroleum – Management","ncert":"Ex 16.2","type":"Concept"},{"day":134,"date":"2026-10-26","dayName":"Monday","month":"October","monthNum":9,"weekNum":28,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"REVISION","topic":"Coordinate Geometry & Trigonometry – Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":135,"date":"2026-10-27","dayName":"Tuesday","month":"October","monthNum":9,"weekNum":28,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Physics","chapter":"Magnetic Effects","topic":"Electromagnetic Induction, AC/DC Generator","ncert":"Ex 13.3","type":"Concept"},{"day":136,"date":"2026-10-28","dayName":"Wednesday","month":"October","monthNum":9,"weekNum":29,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Math","chapter":"REVISION","topic":"Applications + Circles + Areas – Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":137,"date":"2026-10-29","dayName":"Thursday","month":"October","monthNum":9,"weekNum":29,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Chemistry","chapter":"REVISION","topic":"Chemistry – All Reactions & Equations Drill","ncert":"30 equations list","type":"Revision"},{"day":138,"date":"2026-10-30","dayName":"Friday","month":"October","monthNum":9,"weekNum":29,"quarter":"Q3","phase":2,"phaseLabel":"Phase 2: Revision","subject":"Biology","chapter":"REVISION","topic":"Biology – Life Processes Full Revision (Diagrams)","ncert":"PYQ + Exemplar","type":"Revision"},{"day":139,"date":"2026-11-02","dayName":"Monday","month":"November","monthNum":10,"weekNum":29,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"SA&V + Statistics + Probability – Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":140,"date":"2026-11-03","dayName":"Tuesday","month":"November","monthNum":10,"weekNum":29,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Physics","chapter":"Sources of Energy","topic":"Conventional Sources – Coal, Petroleum, Hydro","ncert":"Ex 14.1","type":"Concept"},{"day":141,"date":"2026-11-04","dayName":"Wednesday","month":"November","monthNum":10,"weekNum":30,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"High-Weightage Chapter Focus – Triangles","ncert":"PYQ 5-mark","type":"Revision"},{"day":142,"date":"2026-11-05","dayName":"Thursday","month":"November","monthNum":10,"weekNum":30,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Chemistry","chapter":"REVISION","topic":"Chemistry – Acids/Bases/Metals Full Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":143,"date":"2026-11-09","dayName":"Monday","month":"November","monthNum":10,"weekNum":30,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"High-Weightage Chapter Focus – Trigonometry","ncert":"PYQ 5-mark","type":"Revision"},{"day":144,"date":"2026-11-10","dayName":"Tuesday","month":"November","monthNum":10,"weekNum":30,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Physics","chapter":"Sources of Energy","topic":"Non-Conventional – Solar, Wind, Biogas","ncert":"Ex 14.2","type":"Concept"},{"day":145,"date":"2026-11-11","dayName":"Wednesday","month":"November","monthNum":10,"weekNum":31,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Full Math Practice Paper (80 marks)","ncert":"Sample Paper","type":"Mock"},{"day":146,"date":"2026-11-12","dayName":"Thursday","month":"November","monthNum":10,"weekNum":31,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Chemistry","chapter":"REVISION","topic":"Chemistry – Carbon + Periodic Table Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":147,"date":"2026-11-13","dayName":"Friday","month":"November","monthNum":10,"weekNum":31,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Biology","chapter":"REVISION","topic":"Biology – Reproduction + Heredity Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":148,"date":"2026-11-16","dayName":"Monday","month":"November","monthNum":10,"weekNum":31,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Math Error Analysis & Weak Topic Drill","ncert":"Identified weak areas","type":"Mock"},{"day":149,"date":"2026-11-17","dayName":"Tuesday","month":"November","monthNum":10,"weekNum":31,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Physics","chapter":"Sources of Energy","topic":"Nuclear, Tidal, Geothermal Energy","ncert":"Ex 14.3","type":"Concept"},{"day":150,"date":"2026-11-18","dayName":"Wednesday","month":"November","monthNum":10,"weekNum":32,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":151,"date":"2026-11-19","dayName":"Thursday","month":"November","monthNum":10,"weekNum":32,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Chemistry","chapter":"REVISION","topic":"Chemistry – Full Mock (30 marks)","ncert":"Sample Paper","type":"Mock"},{"day":152,"date":"2026-11-20","dayName":"Friday","month":"November","monthNum":10,"weekNum":32,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Biology","chapter":"REVISION","topic":"Biology – All 10 Key Diagrams Practice","ncert":"Diagram list","type":"Revision"},{"day":153,"date":"2026-11-23","dayName":"Monday","month":"November","monthNum":10,"weekNum":32,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":154,"date":"2026-11-24","dayName":"Tuesday","month":"November","monthNum":10,"weekNum":32,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Physics","chapter":"REVISION","topic":"Physics – Light Full Revision + Numericals","ncert":"PYQ + Exemplar","type":"Revision"},{"day":155,"date":"2026-11-25","dayName":"Wednesday","month":"November","monthNum":10,"weekNum":33,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":156,"date":"2026-11-26","dayName":"Thursday","month":"November","monthNum":10,"weekNum":33,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Chemistry","chapter":"REVISION","topic":"Chemistry – Error Analysis & Equation Memorization","ncert":"Weak areas","type":"Mock"},{"day":157,"date":"2026-11-27","dayName":"Friday","month":"November","monthNum":10,"weekNum":33,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Biology","chapter":"REVISION","topic":"Biology – Full Mock (20 marks)","ncert":"Sample Paper","type":"Mock"},{"day":158,"date":"2026-11-30","dayName":"Monday","month":"November","monthNum":10,"weekNum":33,"quarter":"Q3","phase":3,"phaseLabel":"Phase 3: Pre-Board","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":159,"date":"2026-12-01","dayName":"Tuesday","month":"December","monthNum":11,"weekNum":33,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Physics","chapter":"REVISION","topic":"Physics – Electricity Full Revision + Circuits","ncert":"PYQ + Exemplar","type":"Revision"},{"day":160,"date":"2026-12-02","dayName":"Wednesday","month":"December","monthNum":11,"weekNum":34,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":161,"date":"2026-12-03","dayName":"Thursday","month":"December","monthNum":11,"weekNum":34,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Chemistry","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":162,"date":"2026-12-04","dayName":"Friday","month":"December","monthNum":11,"weekNum":34,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Biology","chapter":"REVISION","topic":"Biology – Error Analysis & Diagram Refinement","ncert":"Weak areas","type":"Mock"},{"day":163,"date":"2026-12-07","dayName":"Monday","month":"December","monthNum":11,"weekNum":34,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":164,"date":"2026-12-08","dayName":"Tuesday","month":"December","monthNum":11,"weekNum":34,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Physics","chapter":"REVISION","topic":"Physics – Magnetic Effects + Sources Revision","ncert":"PYQ + Exemplar","type":"Revision"},{"day":165,"date":"2026-12-09","dayName":"Wednesday","month":"December","monthNum":11,"weekNum":35,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":166,"date":"2026-12-10","dayName":"Thursday","month":"December","monthNum":11,"weekNum":35,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Chemistry","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":167,"date":"2026-12-11","dayName":"Friday","month":"December","monthNum":11,"weekNum":35,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Biology","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":168,"date":"2026-12-14","dayName":"Monday","month":"December","monthNum":11,"weekNum":35,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":169,"date":"2026-12-15","dayName":"Tuesday","month":"December","monthNum":11,"weekNum":35,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Physics","chapter":"REVISION","topic":"Physics – Full Mock (30 marks)","ncert":"Sample Paper","type":"Mock"},{"day":170,"date":"2026-12-16","dayName":"Wednesday","month":"December","monthNum":11,"weekNum":36,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":171,"date":"2026-12-17","dayName":"Thursday","month":"December","monthNum":11,"weekNum":36,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Chemistry","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":172,"date":"2026-12-18","dayName":"Friday","month":"December","monthNum":11,"weekNum":36,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Biology","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":173,"date":"2026-12-21","dayName":"Monday","month":"December","monthNum":11,"weekNum":36,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":174,"date":"2026-12-22","dayName":"Tuesday","month":"December","monthNum":11,"weekNum":36,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Physics","chapter":"REVISION","topic":"Physics – Error Analysis & Diagram Practice","ncert":"Identified weak areas","type":"Mock"},{"day":175,"date":"2026-12-23","dayName":"Wednesday","month":"December","monthNum":11,"weekNum":37,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":176,"date":"2026-12-24","dayName":"Thursday","month":"December","monthNum":11,"weekNum":37,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Chemistry","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":177,"date":"2026-12-28","dayName":"Monday","month":"December","monthNum":11,"weekNum":37,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":178,"date":"2026-12-29","dayName":"Tuesday","month":"December","monthNum":11,"weekNum":37,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Physics","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":179,"date":"2026-12-30","dayName":"Wednesday","month":"December","monthNum":11,"weekNum":38,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Math","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"},{"day":180,"date":"2026-12-31","dayName":"Thursday","month":"December","monthNum":11,"weekNum":38,"quarter":"Q4","phase":4,"phaseLabel":"Phase 4: Mock Boards","subject":"Chemistry","chapter":"REVISION","topic":"Comprehensive Practice & Mock Questions","ncert":"PYQ","type":"Revision"}];
+
+const SUBJ = {
+  Math:      { bg:'#DBEAFE', border:'#1D4ED8', text:'#1E3A5F', badge:'#1D4ED8', icon:'📐' },
+  Physics:   { bg:'#FEF3C7', border:'#D97706', text:'#78350F', badge:'#D97706', icon:'⚡' },
+  Chemistry: { bg:'#F3E8FF', border:'#7C3AED', text:'#4C1D95', badge:'#7C3AED', icon:'🧪' },
+  Biology:   { bg:'#D1FAE5', border:'#059669', text:'#064E3B', badge:'#059669', icon:'🌿' },
+};
+const QTR_COLORS = {
+  Q1:'#2563EB', Q2:'#16A34A', Q3:'#D97706', Q4:'#E11D48'
+};
+const QTR_LIGHT = {
+  Q1:'#EFF6FF', Q2:'#F0FDF4', Q3:'#FFFBEB', Q4:'#FFF1F2'
+};
+const TYPE_COLORS = {
+  'Concept':'#E0F2FE','Formula':'#FEF3C7','Theorem+Proof':'#FCE7F3','Proof':'#FCE7F3',
+  'Application':'#ECFDF5','Method':'#F5F3FF','Diagram':'#FFF7ED','Diagram+Concept':'#FFF7ED',
+  'Revision':'#F1F5F9','Mock':'#FEE2E2','Numericals':'#E0F2FE','Graph':'#F0FDF4',
+  'Law':'#FCE7F3','Rule':'#EEF2FF','Memorize':'#FEF9C3','Theorem':'#FCE7F3',
+  'Formula+Application':'#FEF3C7'
+};
+const QUARTER_META = {
+  Q1: {
+    period:'Apr 15 – Jun 30, 2026', phase:'Phase 1: First Learning',
+    exam:'Q1 / First Terminal Examination', examDate:'Last week of June 2026',
+    examTarget:'Math 60%+, Science 60%+',
+    desc:'First-time learning of all Phase 1 chapters. NCERT exercises, concept building, and foundation strengthening.',
+    tips:['Complete every NCERT exercise before moving to next topic','Make short handwritten notes for each chapter','Draw all Biology & Physics diagrams repeatedly','Solve at least 3 HOTS per chapter','Maintain an error log from Day 1']
+  },
+  Q2: {
+    period:'Jul 1 – Sep 30, 2026', phase:'Phase 1 (end) + Phase 2 (Revision)',
+    exam:'Half-Yearly / SA1 Examination', examDate:'Last week of September 2026',
+    examTarget:'Math 70%+, Science 68%+',
+    desc:'Complete remaining Phase 1 chapters (Triangles through Probability) and begin first full revision. NCERT Exemplar and PYQ practice begins.',
+    tips:['Triangles proofs must be word-perfect — they carry 8-9 marks','Build your Trigonometry values table — 0° to 90°','Start solving 5 years of PYQ chapter by chapter','Begin NCERT Exemplar for high-weightage chapters','Set aside Friday for Biology diagrams — 10 key diagrams']
+  },
+  Q3: {
+    period:'Oct 1 – Nov 30, 2026', phase:'Phase 2 (Revision) + Phase 3 (Pre-Board)',
+    exam:'Pre-Board Examination', examDate:'Last week of November 2026',
+    examTarget:'Math 80%+, Science 78%+',
+    desc:'Full revision of all 30 chapters. CBSE Sample Papers. Focus on answer presentation, time management and exam writing quality.',
+    tips:['Attempt CBSE 2024 Sample Paper under full exam conditions','Work on 5-mark answer format and stepwise solutions','Memorize all 30 key chemical equations','Practice 10 Biology diagrams until they are perfect','Identify 3-4 weak chapters and give them 40% of time']
+  },
+  Q4: {
+    period:'Dec 1 – Dec 31, 2026', phase:'Phase 4: Mock Board Examinations',
+    exam:'3 Full Mock Board Exams', examDate:'Dec 8-9 | Dec 15-16 | Dec 22-23',
+    examTarget:'Mock 3: 78+/80 → Board Exam 90%+',
+    desc:'Three complete mock board exams simulating real conditions. Error analysis after each. Final polishing of formulas, diagrams, and equations.',
+    tips:['Simulate exact exam: 3 hours, no breaks, no phone','After each mock — categorize errors by chapter and type','Maintain a "Last 7 days" booklet: all formulas, equations, diagrams','Sleep 8 hours every night — no last-minute cramming','On exam day: read all questions first, attempt easy ones first']
+  }
+};
+
+let currentSubjFilter = 'All';
+
+// ---- SWITCH TABS ----
+function switchTab(name) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if (name === 'week' && !document.getElementById('weekContainer').children.length) buildWeekView();
+  if (name === 'month' && !document.getElementById('monthContainer').children.length) buildMonthView();
+  if (name === 'quarter' && !document.getElementById('quarterContainer').children.length) buildQuarterView();
+}
+
+function subjTag(subject, small=false) {
+  const s = SUBJ[subject];
+  return `<span class="subj-tag" style="background:${s.bg};color:${s.text};border:1px solid ${s.border}">${s.icon} ${subject}</span>`;
+}
+
+function typeTag(type) {
+  const bg = TYPE_COLORS[type] || '#F1F5F9';
+  return `<span class="type-pill" style="background:${bg};color:#374151">${type}</span>`;
+}
+
+function formatDate(ds) {
+  const [y,m,d] = ds.split('-');
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${d} ${months[parseInt(m)-1]}`;
+}
+
+// ---- DAY TABLE ----
+function renderDayRows(data) {
+  const tbody = document.getElementById('dayBody');
+  tbody.innerHTML = data.map(d => {
+    const s = SUBJ[d.subject];
+    return `<tr style="background:${s.bg}22">
+      <td style="font-weight:700;color:${s.text};${'' /* width */}">${d.day}</td>
+      <td style="font-weight:600">${formatDate(d.date)}</td>
+      <td style="color:var(--muted)">${d.dayName.slice(0,3)}</td>
+      <td><span style="background:${QTR_LIGHT[d.quarter]};color:${QTR_COLORS[d.quarter]};border:1px solid ${QTR_COLORS[d.quarter]};border-radius:6px;padding:2px 7px;font-size:0.72rem;font-weight:700">${d.quarter}</span></td>
+      <td>${subjTag(d.subject)}</td>
+      <td style="font-weight:600;font-size:0.8rem">${d.chapter.replace(' ⭐','<span style="color:#F59E0B"> ⭐</span>')}</td>
+      <td>${d.topic}</td>
+      <td style="color:var(--muted);font-size:0.78rem">${d.ncert}</td>
+      <td>${typeTag(d.type)}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('dayCount').textContent = `Showing ${data.length} of 180 days`;
+}
+
+function filterDayTable() {
+  const q = document.getElementById('daySearch').value.toLowerCase();
+  const filtered = SCHEDULE.filter(d => {
+    const matchSubj = currentSubjFilter === 'All' || d.subject === currentSubjFilter;
+    const matchSearch = !q || d.topic.toLowerCase().includes(q) || d.chapter.toLowerCase().includes(q) || d.ncert.toLowerCase().includes(q);
+    return matchSubj && matchSearch;
+  });
+  renderDayRows(filtered);
+}
+
+function setSubjFilter(subj, btn) {
+  currentSubjFilter = subj;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterDayTable();
+}
+
+// ---- WEEK VIEW ----
+function buildWeekView() {
+  const byWeek = {};
+  SCHEDULE.forEach(d => {
+    if (!byWeek[d.weekNum]) byWeek[d.weekNum] = [];
+    byWeek[d.weekNum].push(d);
+  });
+  const container = document.getElementById('weekContainer');
+  let html = '';
+  let totalWeeks = Object.keys(byWeek).length;
+  html += `<p style="color:var(--muted);margin-bottom:16px;font-size:0.85rem">Total: ${totalWeeks} weeks across Apr–Dec 2026</p>`;
+  Object.keys(byWeek).sort((a,b)=>a-b).forEach(wk => {
+    const days = byWeek[wk];
+    const firstDay = days[0];
+    const lastDay = days[days.length-1];
+    const q = firstDay.quarter;
+    const subjCounts = {};
+    days.forEach(d => subjCounts[d.subject] = (subjCounts[d.subject]||0)+1);
+    html += `<div class="week-card">
+      <div class="week-header" style="background:${QTR_COLORS[q]}">
+        <h3>Week ${wk} &nbsp;·&nbsp; ${formatDate(firstDay.date)} – ${formatDate(lastDay.date)}</h3>
+        <span>${q} | ${firstDay.phaseLabel} | ${days.length} school days</span>
+      </div>
+      <div class="week-days">
+        ${days.map(d => {
+          const s = SUBJ[d.subject];
+          return `<div class="day-card" style="background:${s.bg}44;border-left:3px solid ${s.border}">
+            <div class="day-label">${d.dayName}</div>
+            <div class="day-date">${formatDate(d.date)}</div>
+            <div class="day-subject" style="color:${s.text}">${s.icon} ${d.subject}</div>
+            <div class="day-chapter" style="color:var(--muted)">${d.chapter.replace(' ⭐','⭐')}</div>
+            <div class="day-topic">${d.topic}</div>
+            <div style="margin-top:6px">${typeTag(d.type)}</div>
+            <div style="margin-top:4px;font-size:0.72rem;color:var(--muted)">${d.ncert}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ---- MONTH VIEW ----
+function buildMonthView() {
+  const byMonth = {};
+  SCHEDULE.forEach(d => {
+    const key = d.month + ' 2026';
+    if (!byMonth[key]) byMonth[key] = [];
+    byMonth[key].push(d);
+  });
+  const container = document.getElementById('monthContainer');
+  let html = '';
+  const monthOrder = ['April 2026','May 2026','June 2026','July 2026','August 2026','September 2026','October 2026','November 2026','December 2026'];
+  monthOrder.forEach(month => {
+    const days = byMonth[month];
+    if (!days) return;
+    const q = days[0].quarter;
+    const qc = QTR_COLORS[q];
+    const subjCount = {};
+    days.forEach(d => subjCount[d.subject] = (subjCount[d.subject]||0)+1);
+    html += `<div class="month-section">
+      <div class="month-header" style="background:${qc};color:white;border-radius:10px 10px 0 0">
+        <div>
+          <div class="month-title">${month}</div>
+          <div class="month-subtitle">${q} — ${days[0].phaseLabel} | ${days.length} school days</div>
+        </div>
+        <div class="month-stats">
+          ${Object.entries(subjCount).map(([s,c]) => `<div class="month-stat"><span class="month-stat-num">${c}</span>${SUBJ[s].icon} ${s}</div>`).join('')}
+        </div>
+      </div>
+      <div style="overflow-x:auto;box-shadow:var(--shadow-md)">
+      <table class="plan-table">
+        <thead style="background:#F1F5F9">
+          <tr>
+            <th style="width:45px;color:var(--navy)">#</th>
+            <th style="width:90px;color:var(--navy)">Date</th>
+            <th style="width:70px;color:var(--navy)">Day</th>
+            <th style="width:90px;color:var(--navy)">Subject</th>
+            <th style="color:var(--navy)">Chapter</th>
+            <th style="color:var(--navy)">Topic</th>
+            <th style="width:100px;color:var(--navy)">NCERT</th>
+            <th style="width:120px;color:var(--navy)">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${days.map((d,i) => {
+            const s = SUBJ[d.subject];
+            return `<tr style="background:${i%2===0?s.bg+'33':'white'}">
+              <td style="font-weight:700;color:${s.text}">${d.day}</td>
+              <td style="font-weight:600">${formatDate(d.date)}</td>
+              <td style="color:var(--muted)">${d.dayName.slice(0,3)}</td>
+              <td>${subjTag(d.subject)}</td>
+              <td style="font-weight:600;font-size:0.8rem">${d.chapter.replace(' ⭐','<span style="color:#F59E0B">⭐</span>')}</td>
+              <td>${d.topic}</td>
+              <td style="color:var(--muted);font-size:0.78rem">${d.ncert}</td>
+              <td>${typeTag(d.type)}</td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+// ---- QUARTER VIEW ----
+function buildQuarterView() {
+  const byQuarter = {};
+  SCHEDULE.forEach(d => {
+    if (!byQuarter[d.quarter]) byQuarter[d.quarter] = [];
+    byQuarter[d.quarter].push(d);
+  });
+  const container = document.getElementById('quarterContainer');
+  let html = '';
+
+  ['Q1','Q2','Q3','Q4'].forEach(q => {
+    const days = byQuarter[q] || [];
+    if (!days.length) return;
+    const meta = QUARTER_META[q];
+    const qc = QTR_COLORS[q];
+    const ql = QTR_LIGHT[q];
+
+    // Subject stats
+    const sc = {};
+    days.forEach(d => sc[d.subject] = (sc[d.subject]||0)+1);
+    const mathDays = sc.Math||0, physDays = sc.Physics||0, chemDays = sc.Chemistry||0, bioDays = sc.Biology||0;
+
+    // By month within quarter
+    const byMonth = {};
+    days.forEach(d => {
+      if (!byMonth[d.month]) byMonth[d.month] = [];
+      byMonth[d.month].push(d);
+    });
+
+    html += `<div class="quarter-section" style="border:2px solid ${qc}">
+      <div class="quarter-header" style="background:linear-gradient(135deg,${qc},${qc}CC)">
+        <h2>${q} — ${meta.exam}</h2>
+        <div class="meta">${meta.period} &nbsp;·&nbsp; ${days.length} school days &nbsp;·&nbsp; ${meta.phase}</div>
+      </div>
+      <div class="quarter-body">
+        <!-- Stats row -->
+        <div style="display:flex;flex-wrap:wrap;gap:12px;padding:18px 24px;border-bottom:1px solid var(--border)">
+          <div class="stat-card" style="border-color:${qc}"><span class="stat-num" style="color:${qc}">${days.length}</span><span class="stat-label">Total Days</span></div>
+          <div class="stat-card" style="border-color:#1D4ED8"><span class="stat-num" style="color:#1D4ED8">${mathDays}</span><span class="stat-label">📐 Math Sessions</span></div>
+          <div class="stat-card" style="border-color:#D97706"><span class="stat-num" style="color:#D97706">${physDays}</span><span class="stat-label">⚡ Physics Sessions</span></div>
+          <div class="stat-card" style="border-color:#7C3AED"><span class="stat-num" style="color:#7C3AED">${chemDays}</span><span class="stat-label">🧪 Chemistry Sessions</span></div>
+          <div class="stat-card" style="border-color:#059669"><span class="stat-num" style="color:#059669">${bioDays}</span><span class="stat-label">🌿 Biology Sessions</span></div>
+        </div>
+
+        <!-- Info grid -->
+        <div class="quarter-info-grid">
+          <div class="info-card">
+            <h4>📖 What to Study</h4>
+            <p style="font-size:0.82rem">${meta.desc}</p>
+          </div>
+          <div class="info-card">
+            <h4>💡 Study Tips</h4>
+            <ul class="tips-list">
+              ${meta.tips.map(t => `<li>${t}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Exam box -->
+        <div class="exam-box" style="background:${ql};border:2px solid ${qc}">
+          <h3 style="color:${qc}">🎯 ${meta.exam}</h3>
+          <div class="exam-detail">
+            <span>📅 <strong>Date:</strong> ${meta.examDate}</span>
+            <span>🎯 <strong>Target:</strong> ${meta.examTarget}</span>
+            <span>📝 <strong>Pattern:</strong> CBSE Board format (80 marks each)</span>
+          </div>
+        </div>
+
+        <!-- Month accordion -->
+        <div class="quarter-month-accordion">
+          ${Object.keys(byMonth).map(month => {
+            const mdays = byMonth[month];
+            const mid = `qm-${q}-${month.replace(' ','')}`;
+            return `<div>
+              <div class="qmonth-header" onclick="toggleMonth('${mid}')">
+                <span>${month} 2026 &nbsp; <span style="color:var(--muted);font-size:0.8rem;font-weight:400">${mdays.length} days</span></span>
+                <span class="toggle-icon" id="${mid}-icon">▼</span>
+              </div>
+              <div class="qmonth-body" id="${mid}">
+                <div style="overflow-x:auto">
+                <table class="plan-table">
+                  <thead style="background:#F8FAFC">
+                    <tr>
+                      <th style="width:45px">#</th><th style="width:90px">Date</th><th style="width:70px">Day</th>
+                      <th style="width:90px">Subject</th><th>Chapter</th><th>Topic</th>
+                      <th style="width:100px">NCERT</th><th style="width:120px">Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${mdays.map((d,i) => {
+                      const s = SUBJ[d.subject];
+                      return `<tr style="background:${i%2===0?s.bg+'33':'white'}">
+                        <td style="font-weight:700;color:${s.text}">${d.day}</td>
+                        <td style="font-weight:600">${formatDate(d.date)}</td>
+                        <td style="color:var(--muted)">${d.dayName.slice(0,3)}</td>
+                        <td>${subjTag(d.subject)}</td>
+                        <td style="font-weight:600;font-size:0.8rem">${d.chapter.replace(' ⭐','<span style="color:#F59E0B">⭐</span>')}</td>
+                        <td>${d.topic}</td>
+                        <td style="color:var(--muted);font-size:0.78rem">${d.ncert}</td>
+                        <td>${typeTag(d.type)}</td>
+                      </tr>`;
+                    }).join('')}
+                  </tbody>
+                </table>
+                </div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+function toggleMonth(id) {
+  const body = document.getElementById(id);
+  const icon = document.getElementById(id+'-icon');
+  body.classList.toggle('open');
+  icon.classList.toggle('open');
+}
+
+// ---- INIT ----
+(function init() {
+  renderDayRows(SCHEDULE);
+})();
+</script>
+</body>
+</html>
